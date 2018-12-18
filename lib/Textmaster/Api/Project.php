@@ -97,6 +97,21 @@ class Project extends AbstractApi implements ObjectApiInterface, FilterableApiIn
     {
         return $this->put($this->getPath($projectId), $params);
     }
+    
+    /**
+     * Active translation memory options for a project.
+     *
+     * @link https://app.textmaster.com/documentation?locale=eu#projects-activate-translation-memory-options
+     *
+     * @param string $projectId
+     * @param array  $params
+     *
+     * @return array
+     */
+    public function activateTMOptions($projectId, array $params)
+    {
+        return $this->put($this->getPath($projectId).'/activate_tm_options', $params);
+    }
 
     /**
      * Cancel a project.
